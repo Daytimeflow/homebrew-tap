@@ -7,28 +7,26 @@ Homebrew packages maintained by [Daytimeflow](https://github.com/Daytimeflow).
 Install the native Codex quota and token monitor for the MacBook Pro Touch Bar:
 
 ```bash
-brew install daytimeflow/tap/codex-touchbar-usage
-brew services start daytimeflow/tap/codex-touchbar-usage
+brew install --cask daytimeflow/tap/codex-touchbar-usage
 ```
 
 Check status:
 
 ```bash
-brew services info codex-touchbar-usage
+launchctl print gui/$(id -u)/com.local.codex-touchbar-helper
 ```
 
 Upgrade:
 
 ```bash
 brew update
-brew upgrade codex-touchbar-usage
+brew upgrade --cask codex-touchbar-usage
 ```
 
 Uninstall:
 
 ```bash
-brew services stop codex-touchbar-usage
-brew uninstall codex-touchbar-usage
+brew uninstall --cask codex-touchbar-usage
 ```
 
 Project: [Daytimeflow/codex-touchbar-usage](https://github.com/Daytimeflow/codex-touchbar-usage)
