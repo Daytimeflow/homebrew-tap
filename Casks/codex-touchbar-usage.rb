@@ -1,20 +1,20 @@
 cask "codex-touchbar-usage" do
-  version "0.3.1"
-  sha256 "adcc581c5fc57e8b710f9c100f43dff995b60deb2ec793dcad2527827b50e600"
+  version "0.3.2"
+  sha256 "624b97254a9722a11f78bbca90d0c46f9c9d5c102f90a77fef2910a93985090d"
 
-  url "https://github.com/Daytimeflow/codex-touchbar-usage/releases/download/v#{version}/CodexTouchBarUsage-v#{version}-arm64.zip"
+  url "https://github.com/Daytimeflow/codex-touchbar-usage/archive/refs/tags/v#{version}.tar.gz"
   name "Codex Touch Bar Usage"
   desc "Native Codex quota and token monitor for the MacBook Pro Touch Bar"
   homepage "https://github.com/Daytimeflow/codex-touchbar-usage"
 
-  depends_on arch: :arm64
   depends_on macos: :monterey
 
-  installer script: "CodexTouchBarUsage-v#{version}-arm64/install.sh"
+  installer script: "codex-touchbar-usage-#{version}/scripts/install_touchbar_helper.sh"
 
-  uninstall script: "CodexTouchBarUsage-v#{version}-arm64/uninstall.sh"
+  uninstall script: "codex-touchbar-usage-#{version}/scripts/uninstall_touchbar_helper.sh"
 
   caveats <<~EOS
-    The helper starts automatically at login and appears only while Codex or ChatGPT is focused.
+    The helper is built locally with the installed Swift toolchain, starts automatically at login,
+    and appears only while Codex or ChatGPT is focused.
   EOS
 end
