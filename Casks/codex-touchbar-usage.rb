@@ -1,6 +1,6 @@
 cask "codex-touchbar-usage" do
-  version "0.3.4"
-  sha256 "0cfba47713828c508d069c050468e573e746d72cbb51cce2be658b234be79f35"
+  version "0.3.5"
+  sha256 "619063b75c7c974112c39e3d8630b351ad388d9a1654786320d2ea49d0d4084f"
 
   url "https://github.com/Daytimeflow/codex-touchbar-usage/archive/refs/tags/v#{version}.tar.gz"
   name "Codex Touch Bar Usage"
