@@ -4,7 +4,7 @@ cask "codex-touchbar-usage" do
 
   url "https://github.com/Daytimeflow/codex-touchbar-usage/releases/download/v#{version}/CodexTouchBarUsage-v#{version}-arm64.zip"
   name "Codex Touch Bar Usage"
-  desc "Native Codex quota and token monitor for the MacBook Pro Touch Bar"
+  desc "Native Codex quota, reset-card, and token monitor for the MacBook Pro Touch Bar"
   homepage "https://github.com/Daytimeflow/codex-touchbar-usage"
 
   depends_on arch: :arm64
