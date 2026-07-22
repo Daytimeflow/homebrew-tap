@@ -1,20 +1,21 @@
 cask "codex-touchbar-usage" do
-  version "0.3.5"
-  sha256 "619063b75c7c974112c39e3d8630b351ad388d9a1654786320d2ea49d0d4084f"
+  version "0.3.6"
+  sha256 "e40895db2bfda37b72e31ad51b59f09465b0dbbb983a8d18d73217191987b70b"
 
-  url "https://github.com/Daytimeflow/codex-touchbar-usage/archive/refs/tags/v#{version}.tar.gz"
+  url "https://github.com/Daytimeflow/codex-touchbar-usage/releases/download/v#{version}/CodexTouchBarUsage-v#{version}-arm64.zip"
   name "Codex Touch Bar Usage"
   desc "Native Codex quota and token monitor for the MacBook Pro Touch Bar"
   homepage "https://github.com/Daytimeflow/codex-touchbar-usage"
 
+  depends_on arch: :arm64
   depends_on macos: :monterey
 
-  installer script: "codex-touchbar-usage-#{version}/scripts/install_touchbar_helper.sh"
+  installer script: "CodexTouchBarUsage-v#{version}-arm64/install.sh"
 
-  uninstall script: "codex-touchbar-usage-#{version}/scripts/uninstall_touchbar_helper.sh"
+  uninstall script: "CodexTouchBarUsage-v#{version}-arm64/uninstall.sh"
 
   caveats <<~EOS
-    The helper is built locally with the installed Swift toolchain, starts automatically at login,
-    and appears only while Codex or ChatGPT is focused.
+    This cask installs the prebuilt Apple Silicon helper; Swift is not required.
+    The helper starts automatically at login and appears only while Codex or ChatGPT is focused.
   EOS
 end
